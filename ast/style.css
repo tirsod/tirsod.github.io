@@ -124,6 +124,7 @@ div.floatheader:hover{
 		height: auto;
 	}
 	#quartercontainer{width:49%;}
+	#quartercontainer img{width:75%; height:auto;}
 }
 
 #containerleft {
