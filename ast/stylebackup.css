@@ -64,47 +64,21 @@ div.float1{
 	transition: background 0.2s;
 }
 
-#gamecontainer {
-	box-sizing: border-box;
-	float: left;
-	width: 49%;
-	text-align:center;
-	padding:16px;
-}
-
-#gamecontainer i{
-	color: #bbb
-}
-#gamecontainer img{
-	width: 50%;
-	height: auto;
-}
-@media only screen and (max-width: 520px) {
-	#gamecontainer {
-		box-sizing: border-box;
-		width: 100%;
-		text-align:center;
-		padding-top:10px;
-	}
-	#gamecontainer img{
-		width: 75%;
-		height: auto;
-	}
-}
-
 #containerleft {
-	box-sizing: border-box;
+	padding-top: 10px;
 	float: left;
-	width: 49%;
+	width: 25%;
+	margin-right: 1%;
+	margin-left: 22%;
 	text-align:center;
-	padding-top:10px;
 }
 #containerright {
-	box-sizing: border-box;
+	padding-top: 10px;
 	float: right;
-	width: 49%;
+	width: 25%;
+	margin-right: 22%;
+	margin-left: 1%;
 	text-align:center;
-	padding-top:10px;
 }
 
 div.floatleft{
