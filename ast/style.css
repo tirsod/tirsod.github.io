@@ -55,6 +55,12 @@ a.white:active {color: fff; background-color: transparent; text-decoration: unde
 	100% { opacity:1; bottom:0px; }
 }
 
+#collection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
 div.float1{
 	background: #00000055;
 	background-opacity:0.5;
@@ -62,6 +68,21 @@ div.float1{
 	animation-name: floatin;
 	animation-duration:0.4s;
 	transition: background 0.2s;
+}
+div.float1:hover{
+	background: #9297;
+}
+div.floatheader{
+	background: #00000055;
+	background-opacity:0.5;
+	position: relative;
+	animation-name: floatin;
+	animation-duration:0.4s;
+	transition: background 0.2s;
+	height: 48px;
+}
+div.floatheader:hover{
+	background: #9297;
 }
 
 #bgvideo video {
@@ -89,6 +110,8 @@ div.float1{
 	width: 50%;
 	height: auto;
 }
+#quartercontainer{width:24.9%; padding-top:8px;}
+#quartercontainer img{width:50%; height:auto;}
 @media only screen and (max-width: 520px) {
 	#gamecontainer {
 		box-sizing: border-box;
@@ -100,6 +123,7 @@ div.float1{
 		width: 75%;
 		height: auto;
 	}
+	#quartercontainer{width:49%;}
 }
 
 #containerleft {
@@ -134,7 +158,4 @@ div.floatright{
 	animation-name: floatin;
 	animation-duration:0.4s;
 	transition: background 0.2s;
-}
-div.float1:hover{
-	background: #9297;
 }
