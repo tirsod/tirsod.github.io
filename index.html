@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
+	<LINK rel="stylesheet" type="text/css" media="screen" href="ast/style.css">
     <title>. . .</title>
     <meta name="description" content="Homepage | Art, Sound, Code.">
     <meta name="author" content="tirsod & lilybeevee">
@@ -10,28 +11,26 @@
 
 <link rel='icon' href='ast/skull.ico' type='image/x-icon'/ >
 
-<body bgcolor = "#700000">
-<font face = "Segoe UI" color = "#FFFFFF">
 <left>
 <style>
 a {
-    color: inherit;
+    color: white;
     text-decoration: none;
 }
 div.hell{
     position: absolute;
     bottom: 5%;
-    right: 60%;
+    left: 50%;
 }
-
 body {
-    background-image: url('ast/tirsod.png');
-    background-repeat: no-repeat;
-	background-size: cover
-    background-attachment: fixed;
-    background-position: 75% -28%;
+	background: #700000;
 }
-
+.tir {
+	position: fixed;
+	height: 80%;
+	bottom: 0%;
+	left: 60%;
+}
 div.option {
     width: 100px;
     text-indent: 0px;
@@ -41,11 +40,26 @@ div.option:hover {
 	background: #000000;
 	text-indent: 8px;
 }
+@media only screen and (max-width: 500px) {
+	.tir{
+		left: 45%;
+	}
+	div.hell{
+		left: 6px;
+		bottom:10%
+	}
+	div.option{
+		width: 132px;
+		height: 32px;
+		font-size: 20pt;
+	}
+}
 </style>
+<img src="ast/tirsod.png" class="tir">
 <div class = "hell">
 <a href = "games"> <div class = "option">games </div></a>
-<a href = "software"> <div class = "option">software </div></a>
 <a href = "bgm"> <div class = "option">bgm </div></a>
 <a href = "art"> <div class = "option">art </div></a>
+<a href = "+"> <div class = "option">more </div></a>
 </div>
 </html>

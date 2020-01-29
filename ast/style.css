@@ -1,4 +1,12 @@
 
+/*General font for the body*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
 /*Slide from the left textboxes with no background from the music page*/
 /*each with it's own delay*/
 
@@ -78,8 +86,10 @@ div.floatheader{
 	position: relative;
 	animation-name: floatin;
 	animation-duration:0.4s;
-	transition: background 0.2s;
 	height: 48px;
+	line-height: 48px;
+	vertical-align: middle;
+	transition: background 0.2s;
 }
 div.floatheader:hover{
 	background: #9297;
@@ -98,7 +108,7 @@ div.floatheader:hover{
 #gamecontainer {
 	box-sizing: border-box;
 	float: left;
-	width: 49%;
+	width: 50%;
 	text-align:center;
 	padding:16px;
 }
