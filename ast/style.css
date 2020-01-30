@@ -25,28 +25,13 @@ div{
 
 .slide1{
 	position: relative;
+	background: #0000;
 	animation-name: slidein;
 	animation-duration:0.4s;
+	transition: background-color 0.3s;
 }
-.slide2{
-	position: relative;
-	animation-name: slidein;
-	animation-duration:0.6s;
-}
-.slide3{
-	position: relative;
-	animation-name: slidein;
-	animation-duration:0.8s;
-}
-.slide4{
-	position: relative;
-	animation-name: slidein;
-	animation-duration:1s;
-}
-.slide5{
-	position: relative;
-	animation-name: slidein;
-	animation-duration:1.2s;
+.slide1:hover{
+	background: #000a;
 }
 
 /*pink links*/
@@ -79,7 +64,6 @@ a.white:active {color: fff; background-color: transparent; text-decoration: unde
 
 div.float1{
 	background: #00000055;
-	background-opacity:0.5;
 	position: relative;
 	animation-name: floatin;
 	animation-duration:0.4s;
