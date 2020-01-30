@@ -54,7 +54,7 @@ div{
 a.pink:link { color: #ff3399; background-color: transparent; text-decoration: none; }
 a.pink:visited { color: #ff3399; background-color: transparent; text-decoration: none; }
 a.pink:hover { color: red; background-color: transparent; text-decoration: underline; }
-a.pink:active { color: yellow; background-color: transparent; text-decoration: underline; }
+a.pink:active { color: #0df; background-color: transparent; text-decoration: underline; }
 
 /*white links*/
 
