@@ -7,6 +7,14 @@ body {
 	color: white;
 }
 
+/*
+Mantain div's state after animating
+*/
+
+div{
+	animation-fill-mode: forwards;
+}
+
 /*Slide from the left textboxes with no background from the music page*/
 /*each with it's own delay*/
 
@@ -82,7 +90,6 @@ div.float1:hover{
 }
 div.floatheader{
 	background: #00000055;
-	background-opacity:0.5;
 	position: relative;
 	animation-name: floatin;
 	animation-duration:0.4s;
