@@ -15,6 +15,12 @@ div{
 	animation-fill-mode: forwards;
 }
 
+/* generic fadein */
+@keyframes fadein{
+	0% { opacity:0; }
+	100% { opacity:1; }
+}
+
 /*Slide from the left textboxes with no background from the music page*/
 /*each with it's own delay*/
 
