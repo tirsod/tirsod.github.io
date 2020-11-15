@@ -40,6 +40,62 @@ div{
 	background: #000a;
 }
 
+
+.tvscreen{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+	width: 100%;
+}
+
+.tvscreen iframe{
+	position:absolute;
+	left:50%;
+	top: 10%;
+	transform:translateX(-50%);
+}
+
+.tvselector{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 5px;
+	padding-left : 0px;
+
+	background-color: #0000;
+
+	position: fixed;
+	width: 100%;
+	height: 20%;
+	bottom: 15%;
+}
+.floattv{
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px;
+	margin-left: 0px;
+	margin-right: 15px;
+
+	background: #00000055;
+
+	border-radius: 16px;
+
+	width: 200px;
+	height: 50px;
+	animation-name: floatin;
+	animation-duration:0.4s;
+	transition: background 0.2s;
+}
+.floattv:hover{
+	background: #ffff;
+	color: black;
+}
+
 /*pink links*/
 
 a.pink:link { color: #ff3399; background-color: transparent; text-decoration: none; }
