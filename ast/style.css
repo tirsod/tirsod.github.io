@@ -49,7 +49,8 @@ div.noisebg{
 	opacity: 0;
 	padding: 0px;
 	margin: 0px;
-	background-image: radial-gradient(#111d 0%, #000f 100%);
+	background-image: radial-gradient(#111e 0%, #000f 100%);
+	background-size: cover;
 	position: fixed;
 	width:100%;
 	height:100%;
@@ -76,22 +77,26 @@ div.noisebg{
 	font-size: 20pt;
 	animation-name: fadein;
 	animation-duration: 3s;
+	user-select: none;
 }
 
 .tvscreen{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	flex-wrap: nowrap;
 	text-align: center;
-
-	width: 100%;
 }
 
 .tvscreen iframe{
+	display: block;
+	margin: 0 auto;
+	/*
 	position:absolute;
 	left:50%;
 	top:20%;
 	transform:translateX(-50%);
+	*/
 	animation-name: tvscreenfloat;
 	animation-duration: 1.5s;
 }
@@ -101,31 +106,41 @@ div.noisebg{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding: 5px;
 	padding-left : 0px;
 
 	background-color: #0000;
 
-	position: fixed;
-	width: 100%;
-	height: 20%;
-	bottom: 15%;
+	height: 200px;
 
 	animation-name: tvselectorfloat;
 	animation-duration: 1.5s;
 }
+
+#youtubevideosection{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: auto;
+}
+
+div a{
+	width: 100%;
+	height: 100%;
+}
+
 .floattv{
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 15px;
-	margin-left: 0px;
-	margin-right: 15px;
+
+	margin: 5px 20px;
 
 	background: #0009;
 
 	border-radius: 16px;
+
+	text-align: center;
+	vertical-align: middle;
 
 	width: 200px;
 	height: 50px;
@@ -150,14 +165,13 @@ div.noisebg{
 	}
 	.tvselector div{
 		width: 300px;
+		height: 50px;
 		flex-basis: 100%;
-		margin: 0px;
-		margin-top: 15px;
-		margin-bottom: 15px;
+		margin: 5px auto;
 	}
 	 #tvscreenwelcome {
-		position: fixed;
-		top: 10%;
+		position: relative;
+		margin-top: 15px;
 		left: 0%;
 	}
 }

@@ -1,11 +1,24 @@
 
+selectedMessage = "";
+printedMessage = "";
+var welcome;
+
 window.onload = function(){
-  welcomeMessages = ["", "...", "make yourself at home", "enjoying yourself?", "you are not alone", "hands off the dial", "6410"];
+  welcomeMessages = ["hi.", "take a seat", "today's programming is...", "welcome", "who's your friend?", "who's that behind you?", "should go on a walk soon...", "hmm... did i drink enough water today?", "make yourself at home", "enjoying yourself?", "you are not alone", "want some coffee?", "-6410"];
 
   n = Math.floor(Math.random()*welcomeMessages.length);
-  console.log(n);
-  var welcome = document.getElementById("welcome");
-  welcome.innerHTML = welcomeMessages[n];
+  welcome = document.getElementById("welcome");
+  selectedMessage = welcomeMessages[n];
+
+  setTimeout(addLetter, 50);
+}
+
+addLetter = function(){
+  if (printedMessage.length < selectedMessage.length){
+    printedMessage += selectedMessage[printedMessage.length];
+    welcome.innerHTML = printedMessage;
+    setTimeout(addLetter, 50);
+  }
 }
 
 
