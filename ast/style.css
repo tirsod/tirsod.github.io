@@ -61,8 +61,6 @@ div.noisebg{
 /*Slide from the left textboxes with no background from the music page*/
 /*each with it's own delay*/
 
-
-
 .slide1{
 	position: relative;
 	background: #0000;
@@ -135,6 +133,33 @@ div.noisebg{
 .floattv:hover{
 	background: #ffff;
 	color: black;
+}
+
+@media screen and (max-width: 650px) {
+	#youtube_video{
+		top: 30%;
+		width: 400px;
+		height: 245px;
+		animation-name: none;
+	}
+	.tvselector{
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+		padding: 0px;
+	}
+	.tvselector div{
+		width: 300px;
+		flex-basis: 100%;
+		margin: 0px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	 #tvscreenwelcome {
+		position: fixed;
+		top: 10%;
+		left: 0%;
+	}
 }
 
 /*pink links*/
