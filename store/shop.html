@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA_Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capstone Outfitters</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/8c5cbea69b.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+               <img src="https://user-images.githubusercontent.com/115847180/200141705-bf7b645e-5c32-4c9d-8ba5-cdff947dd23b.jpg" alt="Navbar_logo" height="50" width="250">
+            </div> 
+            <nav>
+               <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="shop.html" class="active"> Shop</a></li>
+                   <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                   <li><a href="login.html" id="login_button">Login/Create Account</a></li>
+                   <li><a href="login.html" id="logout_button">Logout</a></li>
+                   <li><a href="profile.html"><i class="fa-regular fa-user"><label id="profile_button">Profile</label></i></a></li>
+               </ul>
+            </nav>
+            <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+               <div class="bar1"></div>
+               <div class="bar2"></div>
+               <div class="bar3"></div>
+               <ul class="mobile-menu">
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="shop.html" class="active"> Shop</a></li>
+                   <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                   <li><a href="login.html" id="login_button">Login/Create Account</a></li>
+                   <li><a href="login.html" id="logout_button">Logout</a></li>
+                   <li><a href="profile.html"><i class="fa-regular fa-user"><label id="profile_button">Profile</label></i></a></li>
+               </ul>
+           </div>
+          </header>
+       <section id="title">
+        <h2>Shop</h2>
+        <h4>Now happily offering extended sizes from XS to 3XL</h4>
+   </section>
+   <section id="page-sort">
+    <select id="gender-select">
+        <option class="all" value="all" selected>All Products</option>
+        <option class="gender" value="Men">Men</option>
+        <option class="sub-section" value="0">Men's Shirts</option>
+        <option class="sub-section" value="2">Men's Sweaters</option>
+        <option class="sub-section" value="1">Men's Shorts</option>
+        <option class="sub-section" value="3">Men's Pants</option>
+        <option class="gender" value="Women">Women</option>
+        <option class="sub-section" value="4">Women's Shirts</option>
+        <option class="sub-section" value="6">Women's Sweaters</option>
+        <option class="sub-section" value="5">Women's Shorts</option>
+        <option class="sub-section" value="7">Women's Pants</option>
+    </select>
+   </section>
+   <section id="shop">
+        <div class="product-box" id="product_box">
+            <div class="product" onclick="window.location.href='MBarcodeT.html';">
+                <img src="https://user-images.githubusercontent.com/115847180/202916343-e644746a-8b57-4d62-8c52-e5bbdf6d7076.jpg" alt="Men_Tee_Barcode">
+                <div class="description" onclick="window.location.href='MBarcodeT.html';">
+                    <h5>Men's Barcode Tee</h5>
+                    <h4>$20</h4>
+                </div>
+            </div>
+        </div>
+   </section>
+   <script>
+    function la(src){
+        window.location=src;
+    }
+   </script>
+       <script src="shop.js"></script>
+    </body>
+</html>
