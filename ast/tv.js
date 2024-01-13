@@ -4,7 +4,7 @@ selectedFlavor = "";
 
 printedMessage = "";
 printedFlavor = "";
-
+// test
 var welcome;
 var flavor;
 
