@@ -128,6 +128,9 @@ statsAttempts.addEventListener("change", PrintResult);
 
 resultLabel.innerText = "\n\n";
 
+worthies = localStorage.getItem('worthies');
+attempts = localStorage.getItem('attempts');
+
 function WorthyClicked(){
 
     worthies = Number(statsWorthy.value);
@@ -160,6 +163,9 @@ function PrintResult(){
     resultLabel.innerText = "\<b>Worthiness Index:\</b>\<shake>" + ((worthies/attempts)*100).toFixed(2) +"%...";
     resultLabel.innerText += "\n"
     resultLabel.innerText += worthies+"/"+attempts+"...";
+
+    localStorage.setItem('worthies', worthies);
+    localStorage.setItem('attempts', attempts);
 }
 
 </script>
