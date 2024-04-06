@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
+	<LINK rel="stylesheet" type="text/css" media="screen" href="ast/style.css">
+    <title>. . .</title>
+    <meta name="description" content="tirsod.com">
+    <meta name="author" content="?">
+    <link rel='icon' href='ast/skull.ico' type='image/x-icon'/ >
+    <script type='text/javascript' src='ast/tv.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+    a {
+        color: #BF3DBF;
+        text-decoration: wavy;
+    }
+    a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    body {
+        margin: 25px;
+        padding: 0px;
+        font-family: courier, "Lucida Console", sans-serif;
+        font-size: 16pt;
+        background-color: #0B0D13;
+        background-size: cover;
+        background-repeat: repeat;
+        color: #ffffff;
+    }
+
+    input{
+        background-color: #000000;
+        color: #8B89DD;
+        width: 50px;
+        display: inline;
+    }
+
+    button{
+        background-color: #000000;
+        color: #8B89DD;
+    }
+    button:hover{
+        background-color: #104277;
+        color: #8B89DD;
+    }
+
+    label{
+        text-align: center;
+        display: inline-block;
+        width: 200px;
+    }
+
+    .tir {
+        position: fixed;
+        height: 80%;
+        bottom: 0%;
+        left: 60%;
+    }
+    div.option {
+        width: 100px;
+        text-indent: 0px;
+        transition: background 0.2s, text-indent 0.1s;
+    }
+    div.option:hover {
+        background: #000000;
+        text-indent: 8px;
+    }
+    </style>
+
+<b>Stats...</b>
+
+<br>
+
+
+<label for="worthy">Worthy souls</label>
+<input type="number" id="worthy" name="worthy">
+
+
+<br>
+<label for="attempts">Total attempts</label>
+<input type="number" id="attempts" name="attempts">
+
+<br><br>
+
+<b>Worthy? or not?...</b>
+
+<br>
+
+<button type="button" id="addWorthy">+1 Worthy</button>
+<button type="button" id="addUnworthy" style="color:#DB544A;">+1 Unworthy</button>
+
+<br><br>
+
+<b>Our heart says...</b>
+<br><br>
+<div id="result"></div>
+
+<br>
+<b>We may never find out what our chances truly are...</b>
+<br>
+<a href="https://twitch.tv/mdxcai">Or... can we?...</a>
+
+</body>
+</html>
+
+<script>
+
+var worthyButton = document.getElementById("addWorthy");
+var unworthyButton = document.getElementById("addUnworthy");
+var statsWorthy = document.getElementById("worthy");
+var statsAttempts = document.getElementById("attempts");
+var resultLabel = document.getElementById("result");
+
+var worthies = 0;
+var attempts = 0;
+
+worthyButton.addEventListener("click", WorthyClicked);
+unworthyButton.addEventListener("click", UnworthyClicked);
+
+statsWorthy.addEventListener("change", PrintResult);
+statsAttempts.addEventListener("change", PrintResult);
+
+resultLabel.innerText = "\n\n";
+
+function WorthyClicked(){
+
+    worthies = Number(statsWorthy.value);
+    attempts = Number(statsAttempts.value);
+
+    worthies += 1;
+    attempts += 1;
+
+    statsWorthy.value = worthies;
+    statsAttempts.value = attempts;
+
+    PrintResult();
+}
+
+function UnworthyClicked(){
+
+    worthies = Number(statsWorthy.value);
+    attempts = Number(statsAttempts.value);
+
+    attempts += 1;
+
+    statsAttempts.value = attempts;
+    PrintResult();
+}
+
+function PrintResult(){
+
+    worthies = Number(statsWorthy.value);
+    attempts = Number(statsAttempts.value);
+    resultLabel.innerText = "\<b>Worthiness Index:\</b>\<shake>" + ((worthies/attempts)*100).toFixed(2) +"%...";
+    resultLabel.innerText += "\n"
+    resultLabel.innerText += worthies+"/"+attempts+"...";
+}
+
+</script>
