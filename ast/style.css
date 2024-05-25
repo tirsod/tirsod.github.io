@@ -62,6 +62,8 @@ div.noisebg{
 /*Slide from the left textboxes with no background from the music page*/
 /*each with it's own delay*/
 
+/* v2.0 */
+
 .slide1{
 	position: relative;
 	background: #0000;
