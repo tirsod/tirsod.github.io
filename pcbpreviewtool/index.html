@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Papercraft Buddy Preview Tool</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
+  
     <style>
       body {
           background: #000000;
@@ -19,13 +19,12 @@
 
   </head>
   <body>
-
     <div id="unity-container" class="unity-desktop">
       <div style="width: 100%; text-align: center; font-family: 'Segoe UI';">
         Papercraft Buddy Preview Tool
         <br>Upload your texture (.png image) and see what it would look like on stream!
+        <br>
       </div>
-      <br>
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -37,7 +36,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title"></div>
+        <div id="unity-build-title">PCB Preview Tool</div>
       </div>
     </div>
     <script>
@@ -76,12 +75,12 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/pcbpreviewtool.loader.js";
       var config = {
-        dataUrl: buildUrl + "/pcbpreviewtool.data.gz",
-        frameworkUrl: buildUrl + "/pcbpreviewtool.framework.js.gz",
-        codeUrl: buildUrl + "/pcbpreviewtool.wasm.gz",
+        dataUrl: buildUrl + "/pcbpreviewtool.data.unityweb",
+        frameworkUrl: buildUrl + "/pcbpreviewtool.framework.js.unityweb",
+        codeUrl: buildUrl + "/pcbpreviewtool.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "tirsod",
-        productName: "TwitchOverlay",
+        productName: "PCB Preview Tool",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -116,7 +115,6 @@
       }
 
       loadingBar.style.display = "block";
-
 
       var script = document.createElement("script");
       script.src = loaderUrl;
