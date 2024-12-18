@@ -4,7 +4,20 @@ printedMessage = "";
 var welcome;
 
 window.onload = function(){
-  welcomeMessages = ["hi.", "take a seat", "today's programming is...", "welcome", "who's your friend?", "who's that behind you?", "should go on a walk soon...", "hmm... did i drink enough water today?", "make yourself at home", "enjoying yourself?", "you are not alone", "want some coffee?", "-6410"];
+  welcomeMessages = ["hi.", "take a seat", "today's programming is...", "welcome",
+    "who's your friend?", "who's that behind you?", "should go on a walk soon...",
+    "hmm... did i drink enough water today?", "make yourself at home", "enjoying yourself?",
+    "you are not alone", "want some coffee?", "-6410",
+    "been a while since i last saw you.\nhow's it been?", "someone, somewhere, is having a blast.",
+    "can't organize these thoughts well enough.", "someone's going to have to fix that.",
+    "getting interference...", "are you also getting those visions?", "everyone's talking about you.",
+    "the sun lives to light another day.", "i know. too many choices for one person.",
+    "i don't blame you.", "i would have done it too.", "simply not enough time.",
+    "the name isn't important.", "you don't need to know the name\nto know the person.",
+    "show them who you are", "don't be afraid to break out of convention.",
+    "hm...? you brought me something?", "bring me something new.", "don't worry about me.",
+    "that's my type of music.", "got lost?", "it's normal to get lost around these parts.",
+    "you'll find your way.", "well, look who it is."];
 
   n = Math.floor(Math.random()*welcomeMessages.length);
   welcome = document.getElementById("welcome");
