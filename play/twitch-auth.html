@@ -4,28 +4,19 @@
     <title>Twitch Authentication</title>
     <script>
         window.onload = function() {
-            // Get URL fragment (everything after `#`)
             const hash = window.location.hash;
 
-            // Make sure there's an access token in the URL
             if (hash.includes("access_token")) {
                 const params = new URLSearchParams(hash.substring(1));
                 const token = params.get("access_token");
 
                 console.log("Twitch OAuth Token:", token);
 
-                // Send token to Unity
-                if (typeof unityInstance !== "undefined") {
-                    unityInstance.SendMessage("Twitch Auth & Stream Guest Client", "OnTwitchAuthComplete", token);
-                }
-
-                // Clear the hash to prevent reloading issues
+                // Clear hash from URL to avoid infinite reload issues
                 window.history.replaceState({}, document.title, window.location.pathname);
 
-                // Redirect back to the WebGL game (change this to your actual build URL)
-                setTimeout(() => {
-                    window.location.href = "https://tirsod.com/play"; 
-                }, 3000);
+                // Redirect back to WebGL build with token as query param
+                window.location.href = "https://tirsod.com/play/?token=" + token;
             }
         };
     </script>
