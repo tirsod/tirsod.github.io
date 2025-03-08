@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch Live Status</title>
     <style>
-        #liveStatus {
+        .status {
             display: none; /* Initially hidden */
             padding: 10px;
-            background-color: #6441a5;
+            background-color: #000;
             color: white;
             text-align: center;
+            font-family: 'Courier New';
+            letter-spacing: -1px;
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+            transition: color 150ms linear;
+        }
+        a:hover{
+            color: #ff1199;
+            transition: color 150ms linear;
         }
     </style>
 </head>
 <body>
-    <div id="liveStatus">
+    <div id="liveStatus" class="status" style="padding: 5px">
         <a href="https://twitch.tv/tirsod">🔴 Now streaming. Watch live?</a> 
+    </div>
+    <div id="offlineStatus" class="status" style="padding: 5px">
+        🔵 Current status: Offline.
     </div>
 
     <script>
@@ -28,10 +42,13 @@
 
                 // Update the UI based on the response
                 const liveStatusDiv = document.getElementById('liveStatus');
+                const offlineStatusDiv = document.getElementById('offlineStatus');
                 if (data.isLive) {
                     liveStatusDiv.style.display = 'block';
+                    offlineStatusDiv.style.direction = 'none';
                 } else {
                     liveStatusDiv.style.display = 'none';
+                    offlineStatusDiv.style.display = 'block';
                 }
             } catch (error) {
                 console.error('Error fetching live status:', error);
