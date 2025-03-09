@@ -17,7 +17,9 @@ window.onload = function(){
     "show them who you are", "don't be afraid to break out of convention.",
     "hm...? you brought me something?", "bring me something new.", "don't worry about me.",
     "that's my type of music.", "got lost?", "it's normal to get lost around these parts.",
-    "you'll find your way.", "well, look who it is."];
+    "you'll find your way.", "well, look who it is.",
+    "the static... it's getting louder...", "too many layers...",
+    "someone needs to get away from that dial...", "you're back. welcome back."];
 
   n = Math.floor(Math.random()*welcomeMessages.length);
   welcome = document.getElementById("welcome");
