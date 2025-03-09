@@ -10,11 +10,30 @@
 
 <link rel='icon' href='../ast/skull.ico' type='image/x-icon'/ >
 
+<style>
+
+    div{
+        opacity: 0;
+        animation: fadein;
+        animation-name: fadein;
+        animation-delay: .4s;
+        animation-duration:1s;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+    }
+    @keyframes fadein{
+        0% { opacity:0; }
+        100% { opacity:1; }
+    }
+    
+
+</style>
+
 <body bgcolor = "#000000" background = "../ast/tirsod.png">
 <!-- remember majin? -->
 <center>
 
-    <div style="position:absolute; left: 40%; top: 50%;">
+    <div style="position:absolute; left: 40%; top: 50%;" id="lost">
         <h1> <a href="../" class="white"> You've become unfound. </a> </h1>
     </div>
 
