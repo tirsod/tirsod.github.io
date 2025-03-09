@@ -26,11 +26,25 @@
 	}
 	.twocolumn{
 		display:flex;
-		justify-content: space-between;
+		justify-content: center;
 		gap: 20px;
 		opacity: 1;
 		max-width: 500px;
 		align-items: flex-start;
+		margin: 0 auto;
+	}
+	.onecolumn{
+		display:flex;
+		justify-content: center;
+		gap: 20px;
+		opacity: 1;
+		max-width: 500px;
+		margin: 0 auto;
+		flex-direction: column;
+
+		align-items: center;
+	}
+	.onecolumn > .slide1{
 	}
 	.twocolumn > div{
 		flex: 1;
@@ -39,19 +53,16 @@
 	}
 </style> 
 
-<left>
 
-<h1> <a class="white" href="../"> tirsod/bgm . . . </a> </h1>
+<h1> <a class="white" href="../" id="navigation"> tirsod/bgm . . . </a> </h1>
 
-<div class="twocolumn">
-	<div class="slide1" style="animation-delay:0.2s;">
-		<img src="../ast/scpfp.png" width="32" height="32""> 
-		<a class="pink" href="http://soundcloud.com/tirsod">Soundcloud</a>
-		<br>
-		Recent, uncompiled releases
+<div class="onecolumn">
+	<div class="slide1" style="text-align: center;">
+		A collection of music appears before you...<br>
+		Will you stay and listen?
 	</div>
+	
 </div>
-
 
 <div class="twocolumn">
 
@@ -117,5 +128,26 @@
 
 </div>
 
+<div class="onecolumn" id="navigationbottom">
+	<div class="slide1" style="animation-delay:0.2s; width: 300px;">
+		<img src="../ast/scpfp.png" width="32" height="32""> 
+		<a class="pink" href="http://soundcloud.com/tirsod">Soundcloud</a>
+		<br>
+		Recent, uncompiled releases
+	</div>
+	<div class="slide1" style="animation-delay:0.2s; width: 300px;">
+		<img src="../ast/spotifylogo.png" width="32" height="32""> 
+		<a class="pink" href="http://soundcloud.com/tirsod">Spotify</a>
+		<br>
+		Even rarer releases.
+	</div>
+</div>
+
+<script>
+	if (window.self !== window.top){
+		document.getElementById("navigation").style.display = "none";
+		document.getElementById("navigationbottom").style.display = "none";
+	}
+</script>
 
 </html>
