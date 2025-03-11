@@ -1,0 +1,76 @@
+body{
+    background-image: url("ast/staticbg3.gif");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 98vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+hr{
+    height: 1px;
+    border: none;
+    background-color: #ddd;
+}
+
+.vignette{
+
+    size: 100vh 100vh;
+    min-height: 100vh;
+
+    background: 
+        repeating-linear-gradient(#0018, #0018 10px, #0000 10px, #0000 13px),
+        radial-gradient(ellipse, #4A4A4AC0 40%, #000000C0 65%);
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.centercolumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Add this line to center contents vertically */
+    height: 100vh; /* Add this line to make the column take the full height of the viewport */
+    gap: 0; /* Add this line to remove padding between widecards */
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.widecard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000f;
+    color: #fff;
+
+    width: 46.5rem;
+    height: 6rem;
+
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Change from absolute to relative */
+    top: auto; /* Remove top */
+    left: auto; /* Remove left */
+    transform: none; /* Remove transform */
+    padding: 8px;
+}
+
+
+.shadowText1{
+    background: linear-gradient(13deg, #383838ff 1%, #ffff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.shadowText2{
+    background: linear-gradient(0deg, #383838ff 1%, #ffff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
