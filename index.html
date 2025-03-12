@@ -48,17 +48,56 @@
   	background: #000000;
   	text-indent: 8px;
   }
+  .darken{
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0.5;
+    opacity: 0;
+    animation-name: darken;
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+    animation-duration: 5000ms;
+    animation-delay: 100ms;
+  }
+  @keyframes darken {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: .7;
+    }
+  }
+  .vignette{
+    size: 100vh 100vh;
+    min-height: 100vh;
+
+    background: 
+        repeating-linear-gradient(#0018, #0018 10px, #0000 10px, #0000 13px),
+        radial-gradient(ellipse, #4A4A4AC0 40%, #000000C0 65%);
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
 </style>
 
-<div class="noisebg"></div>
+<div class="vignette"></div>
+<div class="darken"></div>
 
 <div class="tvscreen" id="tvscreenwelcome">
-  <p id="welcome">(...)</p>
+  <p id="welcome" style="z-index: 1;">(...)</p>
 </div>
 
 <div id="youtubevideosection">
-  <div class="tvscreen">
-    <iframe id="youtube_video" src="https://www.youtube.com/embed/F-xedRKs_Ok" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+  <div class="tvscreen" z-index="1">
+    <iframe id="youtube_video" src="https://www.youtube.com/embed/F-xedRKs_Ok" width="600" height="340" frameborder="0" allowfullscreen style="z-index: 1; border: 1px solid black;"></iframe>
   </div>
 </div>
 

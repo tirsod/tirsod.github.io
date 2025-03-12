@@ -74,7 +74,9 @@ hr{
 a{
     color: #fff;
 }
-
+a:visited{
+    color: #fff;
+}
 a:hover{
     color: #f00;
 }
