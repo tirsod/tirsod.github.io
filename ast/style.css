@@ -5,6 +5,13 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: white;
+
+	background-image: url("ast/staticbg3.gif");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 98vh;
+    margin: 0;
 }
 
 /*
@@ -229,7 +236,7 @@ a.pink:active { color: #0df; background-color: transparent; text-decoration: und
 a.white:link { color: #fff; background-color: transparent; text-decoration: none; }
 a.white:visited {color: #fff; background-color: transparent; text-decoration: none; }
 a.white:hover { color: #fff; background-color: transparent; text-decoration: underline; }
-a.white:active {color: fff; background-color: transparent; text-decoration: underline; }
+a.white:active {color: #fff; background-color: transparent; text-decoration: underline; }
 
 /*slide up (float) content boxes with a background that covers the page width from the games page*/
 /*all timed the same, except for the title one*/
