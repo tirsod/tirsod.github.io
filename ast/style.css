@@ -242,8 +242,7 @@ a.pink:active { color: #0df; background-color: transparent; text-decoration: und
 /*white links*/
 
 a.white:link { color: #fff; background-color: transparent; text-decoration: none; }
-a.white:visited {color: #fff; background-color: transparent; text-decoration: none; }
-a.white:hover { color: #fff; background-color: transparent; text-decoration: underline; }
+a.white:visited, a.white:hover {color: #fff !important; background-color: transparent; text-decoration: none; }
 a.white:active {color: #fff; background-color: transparent; text-decoration: underline; }
 
 /*slide up (float) content boxes with a background that covers the page width from the games page*/
