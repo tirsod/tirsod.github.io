@@ -1,0 +1,210 @@
+body{
+    background-color: rgb(31, 31, 31);
+    color:rgb(166, 186, 204);
+    font-family: 'Jura', monospace;
+    font-weight: 300;
+}
+
+.sidebar {
+    float: left;
+    width: 14%;
+    min-width: 200px;
+    height: 100%;
+    min-height: 800px;
+    background-color: rgba(0, 0, 0, 0.267);
+    border-right: thin solid #00b3ff;
+
+}
+
+
+.content {
+    float: left;
+
+    min-width: 60%;
+    max-width: 60%;
+
+    min-height: 800px;
+
+    background-color: rgba(0, 0, 0, 0.267);
+    padding-left: 10%;
+    white-space: pre-line;
+    border-left: thin solid #00b3ff;
+}
+
+a.returner{
+    text-decoration: none;
+    color:#757575;
+
+    background-image:linear-gradient(to left, #00b3ff, #00b3ff 30%, #0066ff 31%, #0066ff 65%, #757575 66.66666%, #757575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 100%;
+    background-position: top left;
+
+    transition: all .7s ease-in-out;
+}
+a.returner:hover{
+    text-decoration: none;
+    color:#00b3ff;
+    background-position: top left 100%;
+}
+
+
+.listItem {
+    color: #e7e7e7;
+}
+.listItem:hover {
+    color: #a7d4ff;
+    cursor: pointer;
+}
+a.listItemFinal {
+    color: #e9f4ff;
+    text-decoration: none;
+}
+a.listItemFinal:hover {
+    color: #00b3ff;
+    cursor: pointer;
+}
+
+h1{
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+h2{
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+h3{
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+label{
+    float:left;
+    min-width: 200px;
+}
+
+input[type="text"], textarea {
+    background-color : #121212; 
+    color: white;
+}
+
+input[type="password"], textarea {
+    background-color : #1d1c1c; 
+    color: white;
+}
+
+p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+  
+.inputPassword{
+    color: #ffc9c0;
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+display: block;
+}
+
+.caret{
+    cursor: pointer;
+    width: 5px;
+    transition: transform 0.1s ease;
+}
+.caret::before{
+    content: "\25B6";
+    color: white;
+    display: inline-block;
+    margin-right: 6px;
+}
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+li{
+    margin: 0;
+    padding: 0;
+    tab-size: 0;
+    display:inline;
+    
+    display:block;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    list-style-type:none;
+}
+
+li > ul {
+    pointer-events: none; /* Disable hover events on nested lists */
+}
+
+li > ul li {
+    pointer-events: auto; /* Re-enable pointer events on child <li> */
+}
+
+
+.sidebar{
+    animation: wipe-in-down;
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
+
+.content{
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.returner{
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+
+    left: 5%;
+    top: 2%;
+}
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+
+
+.typed-out {
+    overflow: hidden;
+    border-right: .15em solid white;
+    width: 0;
+    animation: typing 1s forwards;
+  }
+
+
+@keyframes wipe-in-down {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  [transition-style="in:wipe:down"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
+  }
