@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's All About You - Chapter 1</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #e0e0e0 0%, #b0b0b0 100%);
+        }
+        .main-3d {
+            width: 800px;
+            min-height: 100vh;
+            margin: 4rem auto;
+            background-color: #8884;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            /* 3D effect */
+            transform: perspective(3000px) rotateX(16deg) rotateY(0deg);
+            transition: box-shadow 0.3s;
+            animation: rotate 3s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        .main-3d:hover {
+            box-shadow: 0 32px 64px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.18);
+        }
+
+        img {
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        @keyframes rotate {
+            0% { transform: perspective(3000px) rotateX(16deg) rotateY(0deg) translateY(400px);
+                opacity: 0%;}
+            100% { transform: perspective(3000px) rotateX(0deg) rotateY(-1deg) translateY(000px);
+                opacity: 100%; }
+        }
+    </style>
+</head>
+<body>
+    
+    <p><- Return to book selection</p>
+
+    <div class="main-3d">
+        <h1>It's All About You</h1>
+        <h2>Chapter 1</h2>
+        <p>Cats... and they're everywhere.</p>
+        <img src="https://cdn.discordapp.com/attachments/447961217491795968/1404744550244810856/sketch1754987579789.jpg?ex=689c4dcf&is=689afc4f&hm=a2f39efd5002b74e65adaba01af8d3b2318215a589da6db11721825a20b4d920&" width="100%">
+        <p>Welcome to the first chapter of "It's All About You".
+            In this chapter, we will explore the fundamental concepts that
+            revolve around the idea of self-awareness and personal growth.</p>
+        <p>Understanding oneself is a crucial step towards achieving success
+            and happiness in life. This chapter will guide you through various
+            exercises and reflections to help you gain deeper insights into
+            your own thoughts, feelings, and behaviors.</p>
+        <p>Stay tuned for more chapters that will build
+            upon these foundational ideas and help you on your
+            journey of self-discovery.</p>
+
+        <img src="https://cdn.discordapp.com/attachments/447961217491795968/1404744919553277972/sketch1754987676677.jpg?ex=689c4e27&is=689afca7&hm=98baf54589f0e331b947d7d97ac528557cd6f37f939b12446740a1354d4da2ac&" width="100%">
+        
+        <p>"Awh.. man..."</p>
+
+        <p>Thank you for reading Chapter 1 of "It's All About You". We hope
+            you found it insightful and inspiring. Remember, the journey of
+            self-discovery is ongoing, and each chapter will bring you closer
+            to understanding and embracing your true self.</p>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <img width="50%" src="https://cdn.discordapp.com/attachments/820520707787587614/1402222290061627442/sketch1754386219127.png?ex=689bb285&is=689a6105&hm=f39c3d6c184eea82741bcbb2c9093ee35c25699d69fc4b9f8e65e374dfa2af72&" alt="Kichino">
+                <div>
+                    <p>This is kichino on the left, Please align this text to be on the right side of it.</p>
+                    <p>Well, thats how you'd do that.</p>
+                    <p>But, I don't think you can do that with this code.</p>
+                    <p>So, I guess you can just use a table or something.</p>
+                    <p>this lorem ipsum is so ai generated its crazy</p>
+                </div>
+            </div>
+
+        <p>I didn't think too much of her anyway.</p>
+
+    </div>
+
+    <div class="main-3d" style="text-align: center; justify-content: center; align-items: center; min-height: 1vh; width: 200px;">
+        <a href="../2/">Continue...</a>
+    </div>
+
+        <img src="https://cdn.discordapp.com/attachments/820520707787587614/1404217944053121084/tirClapping.gif?ex=689bb4de&is=689a635e&hm=32b9b0535ae569c2ee45e3e42334ed429442ef89c084979eb958077eceffa4eb&">
+
+
+</body>
+</html>
