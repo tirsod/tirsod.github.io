@@ -5,30 +5,22 @@ body{
     font-weight: 300;
 }
 
-.sidebar {
-    float: left;
-    width: 14%;
-    min-width: 200px;
-    height: 100%;
-    min-height: 800px;
-    background-color: rgba(0, 0, 0, 0.267);
-    border-right: thin solid #00b3ff;
-
+#postContent{
+    animation-name: wipedown;
+	animation-fill-mode: backwards;
+	animation-duration: 5s;
+	animation-delay: 0s;
+    animation-timing-function: linear;
 }
 
 
-.content {
-    float: left;
-
-    min-width: 60%;
-    max-width: 60%;
-
-    min-height: 800px;
-
-    background-color: rgba(0, 0, 0, 0.267);
-    padding-left: 10%;
-    white-space: pre-line;
-    border-left: thin solid #00b3ff;
+a{
+    color: #58b2ce;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+a:hover{
+    color: #00ff73;
 }
 
 a.returner{
@@ -156,11 +148,10 @@ li > ul li {
     pointer-events: auto; /* Re-enable pointer events on child <li> */
 }
 
-
-.sidebar{
-    animation: wipe-in-down;
-    animation-duration: 3s;
-    animation-delay: 0s;
+.blogContainer{
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 10%;
 }
 
 .content{
@@ -170,7 +161,6 @@ li > ul li {
     animation-delay: 1s;
     animation-fill-mode: forwards;
 }
-
 .returner{
     opacity: 0;
     animation: fadeIn;
@@ -181,6 +171,91 @@ li > ul li {
     left: 5%;
     top: 2%;
 }
+
+.sidebar {
+    float: left;
+    width: 14%;
+    min-width: 200px;
+    height: 100%;
+    min-height: 800px;
+    background-color: rgba(0, 0, 0, 0.267);
+    border-right: thin solid #00b3ff;
+
+    animation: wipe-in-down;
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
+.content {
+    float: left;
+
+    min-width: 60%;
+    max-width: 60%;
+
+    min-height: 800px;
+
+    background-color: rgba(0, 0, 0, 0.267);
+    padding-left: 10%;
+    white-space: pre-line;
+    border-left: thin solid #00b3ff;
+
+    max-height: 600px;
+    overflow: scroll;
+    scrollbar-color: #00b3ff #0000;
+    scrollbar-width: thin;
+}
+
+/* TALL SCREEN RULES */
+@media screen and (max-width: 1080px) {
+    .blogContainer {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar {
+        box-sizing: border-box;
+
+        width: 100%;
+        min-width: 400px;
+
+        height: 400px;
+        min-height: 0px;
+        max-height: 400px;
+
+        padding: 40px;
+
+        border-right: none;
+        border-bottom: thin solid #00b3ff;
+
+        overflow: scroll;
+
+        font-size: 24pt;
+
+        scrollbar-color: #00b3ff #0000;
+        scrollbar-width: thin;
+    }
+    .content{
+        box-sizing: border-box;
+
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+
+        min-height: 100%;
+        max-height: 100%;
+
+        border-left: none;
+
+        font-size: 18pt;
+
+        padding: 40px;
+
+        height: auto;
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0;}
     to { opacity: 1;}
@@ -207,4 +282,15 @@ li > ul li {
   
   [transition-style="in:wipe:down"] {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
-  }
+    }
+
+@keyframes wipedown {
+	0% {
+		opacity: 1;
+		clip-path: inset(0 0 100% 0);
+	}
+	100% {
+		opacity: 1;
+		clip-path: inset(0 0 0 0);
+	}
+}

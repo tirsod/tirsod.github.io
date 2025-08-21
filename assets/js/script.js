@@ -11,15 +11,15 @@ $(document).ready(async function(){
       animatePostContentOnly();
     }
 
-    selectedMessage = $("#postContent").html();
+    //selectedMessage = $("#postContent").html();
 
-    addLetter();
+    //addLetter();
 });
 
 var typewriterTimeout;
 function addLetter(){
 
-    var timeout = 2;
+    var timeout = 1;
 
     if (printedMessage.length < selectedMessage.length){
       printedMessage += selectedMessage[printedMessage.length];

@@ -3,31 +3,31 @@
 <head>
     <meta charset="utf-8">
 	  <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
-	  <LINK rel="stylesheet" type="text/css" media="screen" href="ast/style.css">
-      <style>
-        html {
-            background-color: #000;
-        }
-    </style>
-    <title>Tirsod | Game Developer, Artist, Musician</title>
-    <meta name="description" content="Tirsod is a game developer, artist, and musician. Creator of WAVE RIDER and ANTIFECTOR. Explore games, music, and art.">
+	  
+    <link rel="stylesheet" href="/ast/style.css">
+    <script type='text/javascript' src='/ast/tv.js'></script>
+    <title>tirsod.com</title>
+    <meta name="description" content="welcome to tirsod.com || games, music & art || stick to the noise">
     <meta name="author" content="tirsod">
-    <link rel='icon' href='ast/skull.ico' type='image/x-icon'/ >
-    <script type='text/javascript' src='ast/tv.js'></script>
+    <link rel='icon' href='/ast/skull.ico' type='image/x-icon'/ >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <meta property="og:title" content="Tirsod | Game Developer, Artist, Musician">
-    <meta property="og:description" content="Enter the world of tirsod. Games, music, and art.">
+    <meta property="og:title" content="tirsod.com || Games/Music/Art">
+    <meta property="og:description" content="Games/Music/Art by tirsod || stick to the noise.">
     <meta property="og:url" content="https://tirsod.com">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tirsod.com/ast/skull.ico">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tirsod | Game Developer, Artist, Musician">
-    <meta name="twitter:description" content="Creator of Wave Rider & Antifector. Check out games, music, and digital art.">
+    <meta name="twitter:title" content="tirsod.com || Games/Music/Art">
+    <meta name="twitter:description" content="Games/Music/Art by tirsod || stick to the noise.">
     <meta name="twitter:image" content="https://tirsod.com/ast/skull.ico">
 
     <link rel="canonical" href="https://tirsod.com"/>
+
+    <script>
+      localStorage.setItem("indexVisited", window.location.href);
+    </script>
 </head>
 
 <body>
@@ -36,15 +36,11 @@
       color: white;
       text-decoration: none;
   }
-
   body {
     margin: 0px;
     padding: 0px;
     font-family: courier, "Lucida Console", sans-serif;
     font-size: 16pt;
-  	background: url("ast/staticbg3.gif");
-    background-size: cover;
-    background-repeat: repeat;
   }
   .tir {
   	position: fixed;
@@ -101,11 +97,13 @@
   }
 </style>
 
+<div class="staticbg"><img src="/ast/staticbg3.gif" width="100%" height="100%" z-index="0"></div>
 <div class="vignette"></div>
 <div class="darken"></div>
 
+<div style="height: 4vh;"></div>
 <div class="tvscreen" id="tvscreenwelcome">
-  <a href="https://new.tirsod.com" style="z-index: 2; position:relative;"><p id="welcome" style="z-index: 2;">(...)</p></a>
+  <p id="welcome" style="z-index: 2;">(...)</p>
 </div>
 
 <div id="youtubevideosection">
@@ -114,70 +112,35 @@
   </div>
 </div>
   
-<div class="tvscreen" id="tvscreenwelcome">
-  <p id="welcome" style="z-index: 2; font-size: 16pt;">
-    <i>I'm Tirsod, a game developer, artist, and musician.</i><br><br>
-    I made Wave Rider & Antifector,<br>and have also worked on multiple games by Startreming!<br>
-    <br>
-    See more here:
+<div class="tvscreen" id="notvscreenwelcome">
+  <div style="z-index: 2; font-size: 16pt;">
+    <p>Welcome to tirsod.com</p>
+<p>Choose a category to explore its contents.</p>
+
   </p>
 </div>
 
-<div style="position:relative; display: flex; column-count: 1; flex-direction: column; row-gap: 60px; flex-wrap: nowrap;">
-  <div class="tvselector">
-      <div>
-        <a href = "https://new.tirsod.com/#games">
-          <div class = "floattv">
-            games
-          </div>
-        </a>
-      </div>
+<div class="tvselector">
+  <a href="/games" class = "floattv">
+    games
+  </a>
+  <a href="/music" class = "floattv">
+    music
+  </a>
+  <a href="/art" class = "floattv">
+    art
+  </a>
+  <a href="/about" class = "floattv">
+    about
+  </a>
+ </div>
 
-      <div>
-        <a href = "https://new.tirsod.com/#music">
-          <div class = "floattv">
-            music
-          </div>
-        </a>
-      </div>
+ <div class="tvselector">
+  <a href="https://lost.tirsod.com" class="floattv">
+    wanna get lost?
+  </a>
+ </div>
 
-      <div>
-        <a href = "https://new.tirsod.com/#art">
-          <div class = "floattv">
-            art
-          </div>
-        </a>
-      </div>
-
-      <div>
-        <a href = "https://new.tirsod.com/#links">
-          <div class = "floattv">
-            links
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-
-
-  <div style="margin-top: 10%; width: 25%; margin: 0 auto; margin-top: 20px; display: flex; flex-direction: column; z-index: 1; position: relative; 	animation-name: fadein; animation-duration: 1.5s;">
-    <div>
-      <a href = "https://lost.tirsod.com">
-        <div class = "floattv" style="height: 80px; margin-top: 50px;">
-          Wanna get lost?
-        </div>
-      </a>
-    </div>
-
-  </div>
-
-    <div class="tvselectorwide" style="margin-top: 50px;">
-      
-  </div>
-
-</div>
 
 </body>
 </html>

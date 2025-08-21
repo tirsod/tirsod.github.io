@@ -1,127 +1,219 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
-	<LINK rel="stylesheet" type="text/css" media="screen" href="../ast/style.css">
-    <title>tirsod/games</title>
-    <meta name="description" content="A compilation of released and work-in-progress games.">
-    <meta name="author" content="tirsod">
-</head>
+	  <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
+	  
+    <link rel="stylesheet" media="screen" href="/ast/style.css">
+    <script type='text/javascript' src='/ast/tv.js'></script>
 
+    <style>
+        html {
+            background-color: #000;
+        }
+    </style>
+
+    <title>tirsod>games...</title>
+    <meta name="description" content="welcome to tirsod.com || games, music & art || stick to the noise">
+    <meta name="author" content="tirsod">
+    <link rel='icon' href='/ast/skull.ico' type='image/x-icon'/ >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <meta property="og:title" content="tirsod.com || Games/Music/Art">
+    <meta property="og:description" content="Games/Music/Art by tirsod || stick to the noise.">
+    <meta property="og:url" content="https://tirsod.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tirsod.com/ast/skull.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="tirsod.com || Games/Music/Art">
+    <meta name="twitter:description" content="Games/Music/Art by tirsod || stick to the noise.">
+    <meta name="twitter:image" content="https://tirsod.com/ast/skull.ico">
+
+    <link rel="canonical" href="https://tirsod.com"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Exo:ital,wght@0,100..900;1,100..900&family=Jura:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
 <style>
-body {
-    background:url(../ast/wr.png) #000;
-	background-position: 50% 0%;
-    background-size: auto;
-	background-repeat:no-repeat;
-}
-div{
-	opacity:0;
-}
+  a {
+      color: white;
+      text-decoration: none;
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-family: courier, "Lucida Console", sans-serif;
+    font-size: 16pt;
+  }
+  .tir {
+  	position: fixed;
+  	height: 80%;
+  	bottom: 0%;
+  	left: 60%;
+  }
+  div.option {
+      width: 100px;
+      text-indent: 0px;
+  	  transition: background 0.2s, text-indent 0.1s;
+  }
+  div.option:hover {
+  	background: #000000;
+  	text-indent: 8px;
+  }
 </style>
 
-<link rel='icon' href='../ast/skull.ico' type='image/x-icon'/ >
+<div class="staticbg"><img src="/ast/staticbg3.gif" width="100%" height="100%"></div>
+<div class="vignette"></div>
+<div class="darken"></div>
+<div class="custombackground"><img src=none></div>
 
-<center>
+<!-- <div class="tvscreen" id="tvscreenwelcome">
+  <a href="https://new.tirsod.com" style="z-index: 2; position:relative;"><p id="welcome" style="z-index: 2;">(...)</p></a>
+</div> -->
 
-<div class="floatheader" style="animation-delay:0.2s">
+<!-- <div id="youtubevideosection">
+  <div class="tvscreen" z-index="1">
+    <iframe id="youtube_video" src="https://www.youtube.com/embed/F-xedRKs_Ok" width="600" height="340" frameborder="0" allowfullscreen style="z-index: 1; border: 1px solid black;"></iframe>
+  </div>
+</div> -->
 
-	<h1> <a class="white" href="../"> tirsod/games . . . </a> </h1>
+<div class="topbar" id="topbar">
+  <div class="sp-logo"><img src="/ast/scpfp.png"></div>
+  <div class="sp-address">
+    <a href="/">tirsod.com </a>/ <a href="/games">games </a></div>
+  <div class="sp-autotext" id="welcome"></div>
+</div>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebarbuttons">
+    <a class="floattv" href = "/" >
+      home
+    </a>
+    <a class="floattv" href = "/games" >
+      games
+    </a>
+    <a class="floattv" href = "/music" >
+      music
+    </a>
+    <a class="floattv" href = "/art" >
+      art
+    </a>
+    <a class="floattv" href = "/about" >
+      about
+    </a>
+    <a class="floattv" href = "/blog" >
+      blog →
+    </a>
+    <a class="floattv" href = "https://twitch.tv/tirsod" >
+      live →
+    </a>
+  </div>
+
+  <!-- <div style="position: absolute; bottom: 5px; width: 100%; text-align: center;">
+    <p>
+      &copy;tirsod 2025
+    </p>
+  </div> -->
 
 </div>
 
-<div id="collection" class="float1" style="animation-delay:0.2s; background:#0000; padding-top:64px; padding-bottom:64px">
-	<div id="gamecontainer" class="float1" style="float:none; width:100%; background:#0000">
+<div class="subpagecontent" id="subpagecontent" style="z-index: 2">
+  <!-- <div class="wide" style="z-index: 2; font-size: 16pt;"></div> -->
+  <h1>Welcome to the games showcase.</h1>
+<hr class="a">
+<h5>—— you can find my games on these platforms</h5>
+<div class="linkcollection">
+<a href="https://startreming.com/" class="lc-yellow"><img src="/ast/svg/star.svg">startreming games</a>
+<a href="https://store.steampowered.com/search/?developer=tirsod">
+<img src="/ast/svg/steam.svg">steam page</a>
+<a href="https://tirsod.itch.io/"><img src="/ast/svg/itch.svg">itch io</a>
+<a href="https://tirsod2000.newgrounds.com/"><img src="/ast/svg/ng.svg">newgrounds</a>
+</div>
+<hr class="b">
+<h5>—— read more about the games</h5>
+<h2><a href="../games/waverider">wave rider</a></h2>
+<h2><a href="../games/antifector">antifector</a></h2>
+<h2><a href="../games/locosoccer">locosoccer</a></h2>
+<hr class="b">
+<h5>also, check these out!</h5>
+<p><a href="../pcbpreviewtool">papercraft buddy tool</a>
+see what your textures will look like on stream
+<a href="../mordio">mordio</a>
+mdxcai fangame</p>
+ 
+  <br><br><br>
 
-    <a href="https://store.steampowered.com/app/1316310/WAVE_RIDER" alt="WAVE RIDER Logo"><img src="../ast/wrl.png" width="256" height="105" alt="WAVERIDER"></a>
-    <br>
-    <br>
-    <br>
-
-		Abstract Arcade Racing Game.<br>
-		A race to the end of the world.<br>
-    <br>
-		<i> <a href="https://store.steampowered.com/app/1316310/WAVE_RIDER" class="pink">Check us out on Steam</a></i>
-	</div>
+  <div style="color: #fff2; width: 100%;">
+    &copy;tirsod 2025
+  </div>
+  
+  <!-- </p> -->
 </div>
 
-<div class="floatheader" style="animation-delay:0.6s">
-	<h1> Releases </h1>
-</div>
+<!-- <div style="position:relative; display: flex; column-count: 1; flex-direction: column; row-gap: 60px; flex-wrap: nowrap;">
+  <div class="tvselector">
+      <div>
+        <a href = "https://new.tirsod.com/#games">
+          <div class = "floattv">
+            games
+          </div>
+        </a>
+      </div>
 
-	<br><br>
+      <div>
+        <a href = "https://new.tirsod.com/#music">
+          <div class = "floattv">
+            music
+          </div>
+        </a>
+      </div>
 
-<div id="collection" class="float1" style="animation-delay:0.4s; background:#0000;">
-	<div id="gamecontainer" class="float1">
+      <div>
+        <a href = "https://new.tirsod.com/#art">
+          <div class = "floattv">
+            art
+          </div>
+        </a>
+      </div>
 
-		<!--
-		<div id="bgvideo">
-			<video autoplay loop>
-              <source src="https://startreming.com/img/antifector.mp4" type="video/mp4" muted>
-            </video>
-		</div>
-		-->
+      <div>
+        <a href = "https://new.tirsod.com/#links">
+          <div class = "floattv">
+            links
+          </div>
+        </a>
+      </div>
 
-		<a href="https://startreming.itch.io/antifector">
-				<img src="../ast/banner/af.png" width="256" height="105" alt="ANTIFECTOR">
-		</a>
-		<br>
-		Arcade Antivirus FPS<br>
-		<i> Lead design, Code, Art, Sound, Music. </i>
-	</div>
+    </div>
+  </div>
 
-	<div id="gamecontainer" class="float1">
 
-		<a href="https://store.steampowered.com/app/396360/LocoSoccer/">
-				<img src="../ast/banner/ls.png" width="256" height="105" alt="LocoSoccer">
-		</a>
-		<br>
-		Physics based 2D soccer game <br>
-		<i> Art, Sound, Music. </i>
 
-	</div>
-</div>
+  <div style="margin-top: 10%; width: 25%; margin: 0 auto; margin-top: 20px; display: flex; flex-direction: column; z-index: 1; position: relative; 	animation-name: fadein; animation-duration: 1.5s;">
+    <div>
+      <a href = "https://lost.tirsod.com">
+        <div class = "floattv" style="height: 80px; margin-top: 50px;">
+          Wanna get lost?
+        </div>
+      </a>
+    </div>
 
-<br>
+  </div>
 
-<div class="floatheader" style="animation-delay:0.6s">
-	<h1> Web Games </h1>
-</div>
+    <div class="tvselectorwide" style="margin-top: 50px;">
+      
+  </div> -->
 
-<br><br>
-
-<div id="collection" class="float1" style="animation-delay:0.8s; background:#0000;">
-
-	<div id="quartercontainer" class="float1">
-		<a href="https://www.newgrounds.com/portal/view/649228">
-			<img src="../ast/banner/aod.jpg" alt="Afraid Of Dark">
-		</a>
-		<br>Horror
-	</div>
-
-	<div id="quartercontainer" class="float1">
-		<a href="https://www.newgrounds.com/portal/view/673283">
-			<img src="../ast/banner/afraid.png" alt="Afraid">
-		</a>
-		<br>Horror
-	</div>
-
-	<div id="quartercontainer" class="float1">
-		<a href="https://www.newgrounds.com/portal/view/683204">
-			<img src="../ast/banner/kcd.png" alt="KeyCountDown">
-		</a>
-		<br>Arcade
-	</div>
-
-	<div id="quartercontainer" class="float1">
-		<a href="https://www.newgrounds.com/portal/view/692091">
-			<img src="../ast/banner/bpulse.png" alt="B-Pulse">
-		</a>
-		<br>Puzzle <i><a href="https://tirsod.itch.io/bpulse" class="pink">(Standalone Download)<a/></i>
-	</div>
+  
+  
 
 </div>
 
+</body>
 </html>
