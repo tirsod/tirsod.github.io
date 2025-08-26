@@ -31,12 +31,21 @@ window.onload = function(){
 
   setTimeout(addLetter, 50);
 
-  prepTooltip()
+  prepTooltip();
 
+        // console.log("LOOK AT ME IM HERE");
+        // console.log(response);
+        // console.log(data);
+
+        // let videoPlayer = document.getElementById('youtube_video');
+        // console.log(videoPlayer);
+        // var twitchPlayer = $("#twitch_player");
+        // videoPlayer.style.display = 'none';
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Your function code here
   if (!wasThePreviousPageTV()){
     $("#sidebar").css("animation-duration", "0s");
     $("#sidebar").css("animation-delay", "0s");
@@ -48,6 +57,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $("#subpagecontent").css("animation-delay", "0s");
   }
+
+  async function checkIfLive() {
+    try {
+        const response = await fetch("https://twitchapi.tdanielv2000.workers.dev");
+        const data = await response.json();
+
+        console.log("LOOK AT ME IM HERE");
+
+        const videoPlayer = document.getElementById('youtube_video');
+        const twitchPlayer = document.getElementById('twitch_player');
+
+        if (data.isLive) {
+          console.log(data.isLive);
+            twitchPlayer.style.display = "block";
+            videoPlayer.style.display = "none";
+        } else {
+            twitchPlayer.style.display = "none";
+            videoPlayer.style.display = "block";
+        }
+    } catch (err) {
+        console.error("Error fetching live status:", err);
+        videoPlayer.style.display = "block";
+        twitchPlayer.style.display = "none";
+    }
+  }
+
+  checkIfLive();
 });
 
 addLetter = function(){
@@ -65,17 +101,6 @@ wasThePreviousPageTV = function(){
     return true;
   }
 }
-
-//Give me that video bro
-/*
-var channelID = "UCgctJZ2fW1bXb6FRj2kGzXw";
-var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
-$.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL)+channelID, function(data) {
-   var link = data.items[0].link;
-   var id = link.substr(link.indexOf("=")+1);
-$("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
-});
-*/
 
 console.log("test");
 
