@@ -8,7 +8,7 @@ body{
 #postContent{
     animation-name: wipedown;
 	animation-fill-mode: backwards;
-	animation-duration: 5s;
+	animation-duration: 1s;
 	animation-delay: 0s;
     animation-timing-function: linear;
 }
@@ -122,8 +122,8 @@ display: block;
 }
 
 li{
-    margin: 0;
-    padding: 0;
+    margin: 1px;
+    padding: 1px;
     tab-size: 0;
     display:inline;
     
@@ -131,6 +131,12 @@ li{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+li.listItemFinal::before {
+  content: "→ "; /* Replace with your desired Unicode arrow character */
+  position: initial;
+  left: 0;
+  color: rgb(135, 187, 255); /* Example: change arrow color */
 }
 
 ul{
