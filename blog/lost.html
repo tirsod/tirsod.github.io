@@ -12,38 +12,173 @@
 </head>
 
 <style type="text/css">
-	body {
-		background:#000;
-		background-position: 50% 0%;
-		background-size:cover;
-		background-repeat:no-repeat;
-		margin: 0px;
-	}
-	div{
-		padding: 6px 8px;
-		opacity:0;
-	}
+  body {
+    background:#000;
+    background-position: 50% 0%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin: 16px;
+  }
+  div{
+    opacity:1;
+  }
   p{
     font-family: Terminal, "Lucida Console", monospace;
     font-size: 14px;
     color: #eeeeee;
     line-height: 0.5;
   }
+  input[type="text"] {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: "Lucida Console", monospace;
+    font-size: 14px;
+    caret-color: white;
+    caret-shape: block;
+  }
+  input[type="text"]::selection {
+    background: white;
+    color: black; 
+  }
+  input[type="text"]:focus {
+    outline: none;
+  }
 </style>
 
 <body>
 
-<p>CTEX Sahara 8x [DEVKIT] [Version 6.4.10.200.0.21]</p>
-<p>(c) Damon Technologies. All rights reserved.</p>
-<br>
-<p>>user>tirsod>log list_</p>
-<p>fetching...
-<p>▓▓▓▓▓▒▒▒▒▒░░░░░╠═════recent logs════╣░░░░░▒▒▒▒▒▓▓▓▓▓</p>
-<br>
-<a><p>../log/entry/9-5-21/the_beginning.s</p></a>
+  <div id="console">
+    <p>CTEX Sahara 8x [DEVKIT] [Version 6.4.10.200.0.21]</p>
+    <p>(c) Damon Technologies. All rights reserved.</p>
+    <p>SYSTEM CHECK INITIALIZED</p>
+    $CLS
+    <p>ROM: ||||||||||||||||||||||||||||||| 100% OK 880KB READY</p>
+    <p>RAM: ||||||||||||||||||||||||||||||| 100% OK 4096 BYTES AVAILABLE</p>
+    <p>ROM: [OK] RAM: [OK]</p>
+    <p>OS INTEGRITY [OK] SYNAPSE [ERR]</p>
+    <p>SYNAPSE MODULE NOT FOUND. RUNNING IN PORTABLE MODE.</p>
+    <p>MIND-NET FUNCTIONS NOT AVAILABLE.</p>
+    <p>CHECK SLOT-CR-TX AND RESTART THE SYSTEM.</p>
+    <p>SYSTEM CHECK COMPLETE</p>
+    <br>
+    <p>AUTORUN STARTED</p>
+    <p>RUN Login.at -s</p>
+    <p>LOGGED IN AS tirsod</p>
+    <p>RUN lister.at -i -o</p>
+    <p>lister.at LOGS -pause</p>
+    <p>RUN CLS -header</p>
+    $CLS
+    <p>CTEX Sahara 8x [DEVKIT] [Version 6.4.10.200.0.21]</p>
+    <p>(c) Damon Technologies. All rights reserved.</p>
+    <br>
+    <p>>user>tirsod>log list_</p>
+    <p>fetching...
+    <p>▓▓▓▓▓▒▒▒▒▒░░░░░╠═════recent logs════╣░░░░░▒▒▒▒▒▓▓▓▓▓</p>
+    <br>
+    <a><p>../log/entry/9-5-21/the_beginning.s</p></a>
+    <p>You look a little lost...</p>
+  </div>
 
-<p>You look a little lost...</p>
+  <input type="text" id="userinput"></input><i id="carete"></i>
 
 </body>
 
+<script>
+
+  var commands = [
+    ["cls", function(){
+      selectedText += "$CLS";
+    }],
+    ["quit", function(){
+      selectedText += "<p>SHUTTING DOWN...</p>";
+      selectedText += "<p>SYSTEM OFF</p>";
+      selectedText += "$EXT";
+    }],
+    ["logout", function(){
+      commands[1][1].call();
+    }],
+    ["exit", function(){
+      commands[1][1].call();
+    }],
+    ["help", function(){
+      selectedText += "<p>AVAILABLE COMMANDS:</p>";
+      selectedText += "<p>";
+      commands.forEach(element => {selectedText += element[0] + " ";});
+      selectedText += "</p>";
+    }]
+  ];
+
+  var set = false;
+
+  var selectedText = document.getElementById('console').innerHTML;
+  var printedText = "";
+  addLetter();
+
+  setTimeout(boxLength, 1);
+  setTimeout(caretHandle, 500);
+  
+  function caretHandle() {
+    var caretValue = "▓"
+    set = !set;
+    if (!set)
+      caretValue = " ";
+    document.getElementById('carete').innerHTML = caretValue;
+    setTimeout(caretHandle, 500);
+  }
+  function boxLength() {
+    var charLength = document.getElementById('userinput').value.length;
+    document.getElementById('userinput').style.width = (charLength*8.4)+"px";
+    setTimeout(boxLength, 1);
+  }
+  function addLetter() {
+    if (selectedText.length > 0) {
+      printedText += selectedText.charAt(0);
+      
+      if (selectedText.startsWith("$CLS")) {
+        selectedText = selectedText.substring(4);
+        document.getElementById('console').innerHTML = "";
+        printedText = "";
+      }
+
+      if (selectedText.startsWith("$EXT")) {
+        selectedText = selectedText.substring(4);
+        window.location.href = "https://youtu.be/ijRTCo3an8A?t=4";
+      }
+
+      selectedText = selectedText.substring(1);
+      document.getElementById('console').innerHTML = printedText;
+    }
+    setTimeout(addLetter, 10);
+  }
+
+  document.getElementById('userinput').addEventListener('input', function() {
+    clearTimeout(boxLength);
+    boxLength();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    document.getElementById("userinput").focus();
+    document.getElementById("userinput").value = document.getElementById('userinput').value;
+
+    if (event.key == "Enter") {
+      selectedText += "<p>>user>tirsod>" + document.getElementById('userinput').value + "</p>";
+      command(document.getElementById('userinput').value.toLowerCase());
+      document.getElementById('userinput').value = "";
+    }
+  });
+
+  function command(input) {
+    // already lowercased
+    commands.forEach(element => {
+      console.log(element[0]);
+      if (input.startsWith(element[0].toLowerCase())) {
+        console.log("command found: " + element[0]);
+        element[1].call()
+      }
+    });
+
+  }
+
+</script>
 </html>
