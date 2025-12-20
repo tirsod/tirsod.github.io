@@ -36,6 +36,13 @@ div.noisebg{
 	animation-duration: 6s;
 }
 
+hr{
+	width: 50%;
+	height: 1px;
+	background: linear-gradient(90deg, #0000 0%, #ffffffad 50%, #0000 100%);
+	border: none
+}
+
 hr.a{
 	border: none;
 	height: 1px;

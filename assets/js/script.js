@@ -1,42 +1,85 @@
-
 var printedMessage = "";
 var selectedMessage = "";
+
+var rsLabel;
+var rsLess;
+var rsMore;
+var readSpeed = 30;
 
 $(document).ready(async function(){
     console.log("Started.");
     buildTreeFromDOM();
+
+    rsLabel = $("#readSpeedLabel");
+    rsLess = $("#slower");
+    rsMore = $("#faster");
+
+    localStorage.getItem("readSpeed") !== null ? readSpeed = Number(localStorage.getItem("readSpeed")) : readSpeed = 30;
+    if (readSpeed > 50)
+        readSpeed = 50;
+    if (readSpeed < 0)
+        readSpeed = 0;
+      
+    rsLabel.text(readSpeed);
 
     console.log(window.location.pathname);
     if (window.location.pathname !== "/blog/"){
       animatePostContentOnly();
     }
 
-    //selectedMessage = $("#postContent").html();
+    selectedMessage = $("#postContent").html();
+    selectedMessage = selectedMessage.replaceAll("…", "...");
 
-    //addLetter();
+    rsLess.click(function(){
+      if (readSpeed > 0)
+        readSpeed -= 5;
+
+      localStorage.setItem("readSpeed", readSpeed);
+      rsLabel.text(readSpeed);
+    });
+
+    rsMore.click(function(){
+      if (readSpeed < 50)
+        readSpeed = Number(readSpeed) + 5;
+
+      localStorage.setItem("readSpeed", readSpeed);
+      rsLabel.text(readSpeed);
+    });
+
+    addLetter();
 });
 
 var typewriterTimeout;
 function addLetter(){
 
-    var timeout = 1;
+    var timeout = readSpeed;
 
     if (printedMessage.length < selectedMessage.length){
-      printedMessage += selectedMessage[printedMessage.length];
+      printedMessage += selectedMessage[printedMessage.length+1];
+      $("#postContent").html(printedMessage);
 
       var char = selectedMessage[printedMessage.length];
-
       if (char == ",")
-        timeout = 50;
+        timeout *= 3;
+
+      if (char == "?")
+        timeout *= 5;
 
       if (char == ".")
-        timeout = 100;
+        timeout *= 10;
 
-      if (char in {"<": 1, ">": 1, "&": 1, '/': 1}) {
-        timeout = 0; // No delay for HTML entities
+      if (char in {"<": 1, ">": 1, "&": 1, '/': 1, 'p': 1}) {
+        timeout *= 0;
       }
 
-      $("#postContent").html(printedMessage);
+      if (timeout == 0 && readSpeed > 0)
+        addLetter();
+
+      if (timeout == 0 && readSpeed == 0){
+        printedMessage = selectedMessage;
+        $("#postContent").html(printedMessage);
+      }
+
       clearTimeout(typewriterTimeout);
       typewriterTimeout = setTimeout(addLetter, timeout);
     }
@@ -128,14 +171,12 @@ function buildTreeFromDOM() {
       .addClass("listItemFinal")
       .text(title);
 
-    // Highlight current post — now works for %20 and deep nested categories
     if (normalizePath(url) === normalizedCurrent) {
       postLink.css({
         "font-weight": "bold",
         color: "#00b3ff"
       });
 
-      // NEW — auto-open all parent folders
       let folderParts = parts;
       for (let i = 0; i < folderParts.length; i++) {
         const pathKey = folderParts.slice(0, i + 1).join("/");
