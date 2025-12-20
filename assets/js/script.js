@@ -54,7 +54,7 @@ function addLetter(){
 
     var timeout = readSpeed;
 
-    if (printedMessage.length < selectedMessage.length){
+    if (printedMessage.length < selectedMessage.length-1){
       printedMessage += selectedMessage[printedMessage.length+1];
       $("#postContent").html(printedMessage);
 
