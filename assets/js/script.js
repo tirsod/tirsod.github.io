@@ -20,13 +20,12 @@ $(document).ready(async function(){
     rsFast = $("#fast");
     rsInstant = $("#instant");
 
-    /*
-    localStorage.getItem("readSpeed") !== null ? readSpeed = Number(localStorage.getItem("readSpeed")) : readSpeed = 30;
+  
+    localStorage.getItem("readSpeed") !== null ? readSpeed = Number(localStorage.getItem("readSpeed")) : readSpeed = 0;
     if (readSpeed > 50)
         readSpeed = 50;
     if (readSpeed < 0)
         readSpeed = 0;
-    */
       
     rsLabel.text(readSpeed);
 

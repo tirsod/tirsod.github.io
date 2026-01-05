@@ -156,7 +156,7 @@ li > ul li {
 
 .blogContainer{
     width: 90%;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10%;
 }
 
@@ -209,7 +209,7 @@ li > ul li {
     scrollbar-color: #00b3ff #0000;
     scrollbar-width: thin;
 
-    height: 80vh;
+    height: 82vh;
 
     background-color: rgba(0, 0, 0, 0.267);
     border-right: thin solid #00b3ff;
@@ -224,16 +224,19 @@ li > ul li {
     min-width: 60%;
     max-width: 60%;
 
-    height: 80vh;
+    height: 82vh;
 
     background-color: rgba(0, 0, 0, 0.267);
     padding-left: 10%;
+    padding-top: 16px;
+    padding-bottom: 16px;
     white-space: pre-line;
     border-left: thin solid #00b3ff;
     
     overflow: scroll;
     scrollbar-color: #00b3ff #0000;
     scrollbar-width: thin;
+    box-sizing: border-box;
 }
 
 .content img {
