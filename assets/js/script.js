@@ -2,23 +2,31 @@ var printedMessage = "";
 var selectedMessage = "";
 
 var rsLabel;
-var rsLess;
-var rsMore;
-var readSpeed = 30;
+var rsSlow;
+var rsNormal;
+var rsFast;
+var rsInstant;
+
+var readSpeed = 0;
+
 
 $(document).ready(async function(){
     console.log("Started.");
     buildTreeFromDOM();
 
     rsLabel = $("#readSpeedLabel");
-    rsLess = $("#slower");
-    rsMore = $("#faster");
+    rsSlow = $("#slow");
+    rsNormal = $("#normal");
+    rsFast = $("#fast");
+    rsInstant = $("#instant");
 
+    /*
     localStorage.getItem("readSpeed") !== null ? readSpeed = Number(localStorage.getItem("readSpeed")) : readSpeed = 30;
     if (readSpeed > 50)
         readSpeed = 50;
     if (readSpeed < 0)
         readSpeed = 0;
+    */
       
     rsLabel.text(readSpeed);
 
@@ -30,18 +38,26 @@ $(document).ready(async function(){
     selectedMessage = $("#postContent").html();
     selectedMessage = selectedMessage.replaceAll("…", "...");
 
-    rsLess.click(function(){
-      if (readSpeed > 0)
-        readSpeed -= 5;
-
+    rsSlow.click(function(){
+      readSpeed = 30;
       localStorage.setItem("readSpeed", readSpeed);
       rsLabel.text(readSpeed);
     });
 
-    rsMore.click(function(){
-      if (readSpeed < 50)
-        readSpeed = Number(readSpeed) + 5;
+    rsNormal.click(function(){
+      readSpeed = 15;
+      localStorage.setItem("readSpeed", readSpeed);
+      rsLabel.text(readSpeed);
+    });
 
+    rsFast.click(function(){
+      readSpeed = 1;
+      localStorage.setItem("readSpeed", readSpeed);
+      rsLabel.text(readSpeed);
+    });
+
+    rsInstant.click(function(){
+      readSpeed = 0;
       localStorage.setItem("readSpeed", readSpeed);
       rsLabel.text(readSpeed);
     });
@@ -51,7 +67,7 @@ $(document).ready(async function(){
 
 var typewriterTimeout;
 function addLetter(){
-
+    console.log("hi");
     var timeout = readSpeed;
 
     if (printedMessage.length < selectedMessage.length-1){
