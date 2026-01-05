@@ -7,7 +7,7 @@ var rsNormal;
 var rsFast;
 var rsInstant;
 
-var readSpeed = 0;
+var readSpeed = 15;
 
 
 $(document).ready(async function(){
@@ -27,7 +27,7 @@ $(document).ready(async function(){
     if (readSpeed < 0)
         readSpeed = 0;
       
-    rsLabel.text(readSpeed);
+    rsLabel.text((readSpeed == 30 ? "1x" : readSpeed == 15 ? "2x" : readSpeed == 1 ? "3x" : "Full"));
 
     console.log(window.location.pathname);
     if (window.location.pathname !== "/blog/"){
@@ -40,25 +40,25 @@ $(document).ready(async function(){
     rsSlow.click(function(){
       readSpeed = 30;
       localStorage.setItem("readSpeed", readSpeed);
-      rsLabel.text(readSpeed);
+      rsLabel.text("1x");
     });
 
     rsNormal.click(function(){
       readSpeed = 15;
       localStorage.setItem("readSpeed", readSpeed);
-      rsLabel.text(readSpeed);
+      rsLabel.text("2x");
     });
 
     rsFast.click(function(){
       readSpeed = 1;
       localStorage.setItem("readSpeed", readSpeed);
-      rsLabel.text(readSpeed);
+      rsLabel.text("3x");
     });
 
     rsInstant.click(function(){
       readSpeed = 0;
       localStorage.setItem("readSpeed", readSpeed);
-      rsLabel.text(readSpeed);
+      rsLabel.text("Full");
     });
 
     addLetter();
